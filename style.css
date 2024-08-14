@@ -213,7 +213,7 @@ body {
 }
 
 .info_box{
-    width: 540px;
+    max-width: 300px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
