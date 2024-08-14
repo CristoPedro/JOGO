@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Teste</title>
+    <style>
+      @media only screen and (max-width: 700px){
+
+          .ttprincipal  {
+              font-size: 2.5em;
+
+          }
+          #open-modal{
+              padding:  16px 16px;
+              font-size: 20px;
+             }
+             #cate{
+              display: none;
+             }
+             .titlo {
+              font-size: 18px;
+             }
+             .b{
+              width: 250px;
+              height: 250px;
+             }
+             .noneLog{
+              display: none;
+             }
+             #modal{
+            width: 300px;
+            max-width: 90%;
+          }
+          .area{
+            max-width: 400px;
+            margin-left: 0px;
+            padding: 30px;
+         }
+          }
+          .botao{
+            position: absolute;
+            top: -15px;
+        
+     
+          }
+          .erro{
+            display: none;
+            color: red;
+          }
+          .correto{
+            display: none;
+            color: rgb(9, 255, 0);
+          }
+        
+  </style>
+</head>
+<body>
+    <header class="content" id="container">
+        <a style="text-decoration: none;" href="#" class="logo noneLog"></a> 
+        <p class="logo titlo"><a href="#">Site de Jogos</a></p>
+          <p class="botao"><button id="bt">&#9776;</button></p>
+         <div class="menu rem" id="menu"> 
+           <a href="#">Inicio</a>
+           <br>
+           <a href="#">Sobre</a>
+           <br>
+           <a href="#">Contacto</a>
+        
+         </div>
+         
+       </header>
+       <h1 class="ttprincipal">Jogos Onlines</h1>
+
+    <div class="conteudo"><a href="#" id="open-modal" class="neon-btn">Explorar</a></div>
+    <!----------------------------------------------------------------->
+
+    <!----------------------------------------------------------------->
+    
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide">
+      <div class="modal-header">
+        <h2>ENTRAR</h2>
+        <button id="close-modal">Fechar</button>
+      </div>
+      <div class="modal-body">
+        <div class="area">
+            <label for="">Nome Do ADM</label>
+
+                  <input type="text" name="" id="nome">
+      
+                  <label for="">Sua Palavra-passe</label>
+      
+                  <input type="password" name="" id="senha">
+                  <p class="erro">nome ou palavra-passe errada!😡</p>
+                  <p class="correto">Concluído!🙄</p>
+      
+        </div>
+        <button class="button12" id="encaminhar">Enviar Dados</button>
+      </div>
+    </div>
+    <!----------------------------------------------------------------->
+<img src="" alt="">
+</body>
+<script>
+    var ico = document.querySelectorAll('#bt');
+    var enca = document.getElementById('encaminhar');
+    var correcao = document.getElementsByClassName('erro')[0];
+    var correcao1 = document.getElementsByClassName('correto')[0];
+
+
+    ico[0].addEventListener('click', ()=>{
+       let menu = document.getElementById('menu');
+       let bnt = document.getElementById('open-modal');
+       if(menu.classList.contains('rem')){
+            bnt.classList.add('descer');
+            menu.classList.add('show');
+            menu.classList.remove('rem');
+            bnt.classList.remove('subir');
+       }else {
+            bnt.classList.add('subir');
+            bnt.classList.remove('descer');
+            menu.classList.add('rem');
+            menu.classList.remove('show');
+       }
+       
+    });
+    var nomeUsuario = document.getElementById('nome');
+    var senhaUsuario = document.getElementById('senha');
+  
+  senhaUsuario.onkeyup=(e)=>{
+  
+    
+    if (e.key === 'Enter'){
+           if(nomeUsuario.value == 'Pedro Cristo' && senhaUsuario.value == 'pedro'){
+            setTimeout(()=>{
+         
+              window.location = 'index.html';
+           },1000);
+           correcao1.style.display = 'block';
+           correcao.style.display = 'none';
+            
+      }
+  }
+  if (nomeUsuario.value != 'Pedro Cristo' || senhaUsuario.value != 'pedro') {
+    correcao.style.display = 'block';
+  }
+   
+  }
+ 
+  
+</script>
+<script src="js.js"></script>
+</html>

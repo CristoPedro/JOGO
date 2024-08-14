@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        @media only screen and (max-width: 700px){
+
+            .ttprincipal  {
+                font-size: 2.5em;
+
+            }
+            .open-modal{
+                padding:  16px 16px;
+                font-size: 20px;
+               }
+               #cate{
+                display: none;
+               }
+               .titlo {
+                font-size: 18px;
+               }
+            }
+    </style>
+    <title>Teste</title>
+</head>
+<body>
+    <header class="content" id="container">
+        <p class="logo titlo"><a href="#">Pedro Cristo</a> </p>
+        <p class="logo titlo"><a href="#" >Home Page</a></p>
+        <p class="logo titlo" id="cate"><a href="#" >Categorias</a></p>
+          <button id="bt">&#9776;</button>
+         <div class="menu rem" id="menu"> 
+           <a href="#">Inicio</a>
+           <br>
+           <a href="#">Sobre</a>
+           <br>
+           <a href="#">Contacto</a>
+        
+         </div>
+         
+       </header>
+       <h1 class="ttprincipal">Categorias do Jogos</h1>
+
+    <div class="conteudo">
+    <a href="../quiz.html" class="open-modal neon-btn">Algoritmo</a>
+    <a href="../quiz.html" class="open-modal neon-btn1">Historia</a>
+    <a href="../quiz.html" class="open-modal neon-btn2 ">Matemática</a>
+    <a href="../quiz.html" class="open-modal neon-btn3">Quimica</a>
+    <a href="../quiz.html" class="open-modal neon-btn4">Aleatório</a>
+    <a href="../quiz.html" class="open-modal neon-btn5">Angola</a>
+</div>
+
+</body>
+<script>
+    var ico = document.querySelectorAll('#bt');
+   
+
+    ico[0].addEventListener('click', ()=>{
+       let menu = document.getElementById('menu');
+       let bnt = document.getElementsByClassName('open-modal')[0];
+       let bnt3 = document.getElementsByClassName('neon-btn2')[0];
+       let bnt4 = document.getElementsByClassName('neon-btn4')[0];
+       if(menu.classList.contains('rem')){
+            bnt.classList.add('descer');
+            bnt.classList.remove('subir');
+            bnt3.classList.add('descer');
+            bnt3.classList.remove('subir');
+            bnt4.classList.add('descer');
+            bnt4.classList.remove('subir');
+            menu.classList.add('show');
+            menu.classList.remove('rem');
+       }else {
+            bnt.classList.add('subir');
+            bnt.classList.remove('descer');
+            bnt3.classList.add('subir');
+            bnt3.classList.remove('descer');
+            bnt4.classList.add('subir');
+            bnt4.classList.remove('descer');
+            menu.classList.add('rem');
+            menu.classList.remove('show');
+       }
+       
+    });
+    var b = document.getElementsByClassName('neon-btn')[0];
+    var b1 = document.getElementsByClassName('neon-btn1')[0];
+    var b2 = document.getElementsByClassName('neon-btn2')[0];
+    var b3 = document.getElementsByClassName('neon-btn3')[0];
+    var b4 = document.getElementsByClassName('neon-btn4')[0];
+    var b5 = document.getElementsByClassName('neon-btn5')[0];
+   
+    b.addEventListener('click', ()=>{
+      window.location="quizTime/index.html";
+    });
+    b1.addEventListener('click', ()=>{
+      window.location="quizTime2/index.html";
+    });
+    b2.addEventListener('click', ()=>{
+      window.location="quizTime3/index.html";
+    });
+    b3.addEventListener('click', ()=>{
+      window.location="quizTime4/index.html";
+    });
+    b4.addEventListener('click', ()=>{
+      window.location="quizTime5/index.html";
+    });
+    b5.addEventListener('click', ()=>{
+      window.location="quizTime6/index.html";
+    });
+  function encaminhar() {
+    let nomeUsuario = document.getElementById('nome');
+    let senhaUsuario = document.getElementById('senha');
+
+    if(nomeUsuario.value == 'Pedro Cristo' && senhaUsuario.value == 'pedro'){
+        window.location = 'quiz1/quiz.html';
+    }else{
+        alert("O nome ou palavra passe esta incorreto ");
+    }
+  }
+</script>
+<script src="js.js"></script>
+</html>

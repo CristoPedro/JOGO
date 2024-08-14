@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="info_box">
+        <div class="info-title"><span>Jogo de Matemática</span></div>
+        <div class="info-list">
+            <div class="info">Pergundas <span>20 segundos</span>.</div>
+            <div class="info">Se os 20 segundos passar tens 0 e vai fechar.</div>
+            <div class="info">Leia atentamente as questões e responda.</div>
+            <div class="info">no Total ?? pergundas.</div>
+            <div class="info">Se conseguires aproveitamento de 100% levaras 4000 kz</div>
+        </div>
+        <div class="buttons">
+            <button class="restart">Jogar </button>
+            <button class="volttart">escolher </button>
+        </div>
+       
+    </div>
+</body>
+<script>
+  let res =  document.querySelector(".restart");
+  
+  res.onclick =()=> {
+    location = 'quiz.html';
+ 
+  }
+  let volt =  document.querySelector(".volttart");
+  volt.onclick =()=> {
+    location = 'javascript/btn.html';
+  }
+</script>
+</html>

@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+*::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  *::-webkit-scrollbar-track {
+    background: #222;
+  }
+  
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+    background: #009688;
+  }
+  
+  /* Handle on hover */
+  *::-webkit-scrollbar-thumb:hover {
+    background: #3289c8;
+  }
+
+  body {
+    margin: 0;
+    font-size: 16px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.custom-box::before,
+.custom-box::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+.custom-box {
+    max-width: 700px;
+    background-color: #ffffff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+section button, .btn {
+    margin: 3px;
+    border: none;
+    background: #3289c8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+section button:hover, .btn:hover {
+    background: #2575fc;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.erradas{
+    color: green;
+    font-weight: bold;
+}
+.ponto{
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.custom-box.hide{
+    display: none;
+}
+
+footer div button{
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer div button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.home-box p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: #000000;
+    font-weight: 400;
+}
+.home-box{
+    max-width: 400px;
+}
+
+
+.home-box p span {
+    font-weight: 500;
+}
+.home-box .btn{
+    margin-top: 20px;
+}
+.btn{
+    padding: 15px 45px;
+    background-color: #009688;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.quiz-box .question-text,
+.quiz-box .option-container,
+.quiz-box .next-question-button,
+.quiz-box .answers-indicator{
+    width: 100%;
+    float: left;
+}
+
+
+.quiz-box .question-text {
+    font-size: 22px;
+    color: #ffffff;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 20px;
+    margin: 0;
+    border: 1px solid black;
+    width: 100%;
+    background: #222;
+    text-align: center;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+/* Responsivo para dispositivos móveis */
+@media (max-width: 600px) {
+    .quiz-box .question-text {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .quiz-box .question-text {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 10px;
+    }
+}
+
+
+
+.quiz-box .option-container .option {
+    background-color: #f5f5f5;
+    padding: 15px;
+    font-size: 18px;
+    color: #333333;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+.quiz-box .option-container .option.correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #28a745;
+    z-index: -1;
+
+    animation: slideInLeft .5s forwards;
+
+}
+.quiz-box .option-container .option:hover {
+    background-color: #e0e0e0;
+}
+.quiz-box .option-container .option.incorrect::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dc3545;
+    z-index: -1;
+    animation: slideInLeft .5s forwards;
+
+}
+
+
+
+
+section .pular.disableBtn{
+    pointer-events: none;
+    background-color: #cccccc95;
+}
+
+
+.quiz-box .option-container .option.already-answered{
+    pointer-events: none;
+}
+@keyframes slideInLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.quiz-box .option-container .option.correct{
+    color: white;
+}
+.quiz-box .option-container .option.incorrect{
+    color: white;
+}
+
+
+
+.quiz-box .btn{
+    margin: 15px 0;
+}
+.quiz-box .answers-indicator{
+    border-top: 1px solid #cccccc;
+}
+
+/* Indicadores de Resposta */
+.quiz-box .answers-indicator div {
+    height: 40px;
+    width: 40px;
+    display: none;
+    background-color: #009688; /* Cor de fundo */
+    border-radius: 50%; /* Círculo perfeito */
+    margin-right: 3px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+/* Caixa de Resultados */
+.result-box.hide {
+    display: none;
+}
+
+.result-box {
+    text-align: center;
+    background-color: #ffffff; /* Cor de fundo da caixa */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.result-box h1 {
+    font-size: 36px;
+    line-height: 42px;
+    color: #009688; /* Cor do texto */
+    font-weight: 700; /* Negrito */
+    margin-bottom: 20px;
+}
+
+.result-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+.result-box table td {
+    border: 1px solid #dddddd; /* Cor da borda */
+    padding: 10px 15px;
+    font-weight: 500;
+    color: #333333; /* Cor do texto */
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+
+.result-box table td:hover {
+    background-color: #f9f9f9; /* Cor de fundo ao passar o mouse */
+}
+
+.result-box .btn {
+    padding: 10px 20px;
+    background-color: #009688; /* Cor do botão */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+.result-box .btn:hover {
+    background-color: #00796b; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Efeito de aumento */
+}
+
+/* Propriedade Customizada */
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
